@@ -1,0 +1,766 @@
+:root {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color:#f0fceb;
+}
+
+.game {
+  margin-top: 0;
+  /* border: 2px solid black; */
+}
+
+.stats {
+  width: 300px;
+  margin-inline: auto;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.stats > span:nth-child(n + 2) {
+  margin-left: 1em;
+}
+
+.map {
+  position: relative;
+  /* border: 2px solid black; */
+  width: 1000px;
+  height: 500px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 100px);
+  background-color: hsl(70, 100%, 45%);
+  /* border-radius: 30px; */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsla(100, 100%, 15%, 0.6);
+  width: 1000px;
+  height: 500px;
+}
+
+/*--------------grid-------------------*/
+/* tr:first-child td:nth-child(-n + 6) {
+  background-color:antiquewhite;
+}
+
+tr:nth-child(2) td:nth-child(6), tr:nth-child(3) td:nth-child(6), 
+tr:nth-child(4) td:nth-child(6), tr:nth-child(5) td:nth-child(6), 
+tr:nth-child(6) td:nth-child(6), tr:nth-child(7) td:nth-child(6),
+tr:nth-child(8) td:nth-child(6), tr:nth-child(9) td:nth-child(n + 6) {
+  background-color:antiquewhite;
+}
+
+tr:nth-child(3) td:nth-child(16), tr:nth-child(4) td:nth-child(16), 
+tr:nth-child(5) td:nth-child(16), tr:nth-child(6) td:nth-child(16),
+tr:nth-child(7) td:nth-child(16), tr:nth-child(9) td:nth-child(16),
+tr:nth-child(8) td:nth-child(16) {
+  background-color:antiquewhite;
+}
+
+tr:nth-child(10) td:nth-child(6), tr:nth-child(11) td:nth-child(6), 
+tr:nth-child(12) td:nth-child(6), tr:nth-child(13) td:nth-child(6), 
+tr:nth-child(14) td:nth-child(6), tr:nth-child(15) td:nth-child(3),
+tr:nth-child(15) td:nth-child(4), tr:nth-child(15) td:nth-child(5),
+tr:nth-child(15) td:nth-child(6){
+  background-color:antiquewhite;
+}
+
+tr:nth-child(8) td:nth-child(28) {
+  background-color:antiquewhite;
+} */
+
+.cycle {
+  background-color: hsl(50, 80%, 90%);
+}
+
+tr, td {
+  /* border: 2px solid black; */
+  width: 30px;
+  height: 31px;
+}
+
+table {
+  width: 1000px;
+}
+
+table, td {
+  border-collapse: collapse;
+}
+
+/*------------------------------------*/
+
+/* .tile {
+  border: 2px solid black;
+  text-align: center;
+} */
+
+.player {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  font-size: 27px;
+  /* z-index: 1; */
+}
+
+/*--------------oak area--------------*/
+.oak-area {
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  left: 200px;
+}
+
+.oak-name {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+}
+
+.oak1 {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.oak2 {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  font-size: 25px;
+}
+
+.oak3 {
+  position: absolute;
+  top: 25px;
+  left: 55px;
+  font-size: 25px;
+}
+
+.oak4 {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 40px;
+}
+
+.oak5 {
+  position: absolute;
+  top: -5px;
+  left: 50px;
+  font-size: 30px;
+}
+/*------------------------------------*/
+
+
+/*--------------pine area--------------*/
+.pine-area {
+  width: 200px;
+  position: absolute;
+  top: 360px;
+  left: 500px;
+}
+
+.pine-name {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+}
+
+.pine1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.pine2 {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  font-size: 25px;
+}
+
+.pine3 {
+  position: absolute;
+  top: 20px;
+  left: 45px;
+  font-size: 25px;
+}
+
+.pine4 {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 40px;
+}
+
+.pine5 {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 30px;
+}
+/*------------------------------------*/
+
+
+/*-------------cave area---------------*/
+.cave-area {
+  width: 130px;
+  height: 50px;
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+
+.cave-name {
+  position: absolute;
+  top: 45px;
+  left: -30px;
+}
+
+.cave1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 30px;
+}
+
+.cave2 {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 25px;
+}
+
+.cave3 {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  font-size: 25px;
+}
+/*--------------------------------------*/
+
+
+/*-------------mountain area--------------*/
+/*----------------------------------------*/
+.mountain-area {
+  width: 130px;
+  position: absolute;
+  top: 0px;
+  left: 900px;
+}
+
+.mountain-name {
+  position: absolute;
+  top: 64px;
+  left: -32px;
+}
+
+.mountain1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 40px;
+  /* z-index: 1; */
+}
+
+.mountain2 {
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  font-size: 25px;
+}
+
+.mountain3 {
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  font-size: 25px;
+}
+
+.mountain4 {
+  position: absolute;
+  top: -8px;
+  left: 5px;
+  font-size: 30px;
+}
+
+.mountain5 {
+  position: absolute;
+  top: 28px;
+  left: 5px;
+  font-size: 25px;
+  z-index: 2;
+}
+
+.mountain6 {
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  font-size: 20px;
+  /* z-index: 2; */
+}
+
+.mountain7 {
+  position: absolute;
+  top: 0px;
+  left: -6px;
+  font-size: 20px;
+}
+/*-----------------------------------------*/
+
+
+/*-------------lake area---------------*/
+.lake-area {
+  width: 130px;
+  position: absolute;
+  top: 425px;
+  left: 300px;
+}
+
+.lake-name {
+  position: absolute;
+  top: 48px;
+  left: -15px;
+}
+
+.lake1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(131, 222, 253);
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+}
+
+.lake2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(131, 222, 253);
+  border-radius: 50%;
+  top: 0px;
+  left: 28px;
+}
+
+.lake3 {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: rgb(131, 222, 253);
+  border-radius: 50%;
+  top: -10px;
+  left: 12px;
+}
+
+.lake4 {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  font-size: 25px;
+}
+
+.lake5 {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 25px;
+}
+
+.lake6 {
+  position: absolute;
+  top: -30px;
+  left: 13px;
+  font-size: 25px;
+}
+/*--------------------------------------*/
+
+
+/*-------------field area---------------*/
+.field-area {
+  width: 130px;
+  position: absolute;
+  top: 150px;
+  left: 660px;
+}
+
+.field-name {
+  position: absolute;
+  top: 48px;
+  left: -20px;
+}
+
+.field1 {
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  background-color: rgb(204, 255, 65);
+  top: 0px;
+  left: 0px;
+}
+
+.field2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 0px;
+  left: 28px;
+}
+
+.field3 {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  font-size: 15px;
+  top: -10px;
+  left: 12px;
+}
+
+.field4 {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  font-size: 25px;
+}
+
+.field5 {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 15px;
+}
+
+/* .lake6 {
+  position: absolute;
+  top: -30px;
+  left: 13px;
+  font-size: 25px;
+} */
+/*--------------------------------------*/
+
+
+/* ---villages area style--- */
+
+/*---------------------------*/
+.village1-area {
+  /* border: 2px solid black; */
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: 20px;
+  left: 490px;
+}
+
+.village1-name {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: -35px;
+}
+
+.village1-main {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  /* z-index: 1; */
+}
+
+.village1-house1, .village1-house2, .village1-house3 {
+  position: absolute;
+  font-size: 20px;
+}
+
+.village1-house1 {
+  top: 20px;
+  left: -4px;
+  /* z-index: 1; */
+}
+
+.village1-house2 {
+  top: 20px;
+  left: 35px;
+}
+
+.village1-house3 {
+  top: 7px;
+  left: 0px;
+}
+/*-----------------------------------*/
+
+
+/*-----------------------------------*/
+.village2-area {
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: 415px;
+  left: 40px;
+}
+
+.village2-name {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: -35px;
+}
+
+.village2-main {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  /* z-index: 1; */
+}
+
+.village2-house1, .village2-house2, .village2-house3 {
+  position: absolute;
+  font-size: 20px;
+}
+
+.village2-house1 {
+  top: 20px;
+  left: -4px;
+  /* z-index: 1; */
+}
+
+.village2-house2 {
+  top: 20px;
+  left: 35px;
+}
+
+.village2-house3 {
+  top: 7px;
+  left: 0px;
+}
+/*-------------------------------------*/
+
+
+/*-----------------------------------*/
+.village3-area {
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: 170px;
+  left: 890px;
+}
+
+.village3-name {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: -35px;
+}
+
+.village3-main {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  /* z-index: 1; */
+}
+
+.village3-house1, .village3-house2, .village3-house3 {
+  position: absolute;
+  font-size: 20px;
+}
+
+.village3-house1 {
+  top: 20px;
+  left: -4px;
+  /* z-index: 1; */
+}
+
+.village3-house2 {
+  top: 20px;
+  left: 35px;
+}
+
+.village3-house3 {
+  top: 7px;
+  left: 0px;
+}
+/*-------------------------------------*/
+
+
+
+
+/* ---town area styles--- */
+.town-area {
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: 210px;
+  left: 290px;
+}
+
+.town-name {
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  top: 70px;
+}
+
+.town-block1 {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 45px;
+  /* z-index: 1; */
+}
+
+.town-block2 {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  font-size: 30px;
+}
+
+.town-block3 {
+  position: absolute;
+  top: 20px;
+  left: 65px;
+  font-size: 30px;
+}
+
+.town-block4 {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  font-size: 30px;
+}
+/*--------------------------------------*/
+
+/*------------dragon castle area------------*/
+.dragon-castle-area {
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  top: 370px;
+  left: 860px;
+}
+
+.castle-name {
+  position: absolute;
+  top: 100px;
+  left: -23px;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.castle1 {
+  font-size: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.castle2 {
+  font-size: 50px;
+  position: absolute;
+  top: 25px;
+  left: -25px;
+}
+
+.castle3 {
+  font-size: 50px;
+  position: absolute;
+  top: 25px;
+  left: 60px;
+}
+/*------------------------------------------*/
+
+
+
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 600px;
+  margin-bottom: 1em;
+  /* margin-top: 1em; */
+}
+
+.text {
+  text-align: center;
+  width: 500px;
+  height: 100px;
+  border: 2px solid black;
+  margin-inline: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  margin-top: 0;
+}
+
+.enter {
+  display: none;
+}
+
+.troll {
+  font-size: 30px;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  display: none;
+}
+
+.orc {
+  font-size: 30px;
+  position: absolute;
+  top: 50px;
+  left: 450px;
+  display: none;
+}
+
+.elf {
+  font-size: 30px;
+  position: absolute;
+  top: 220px;
+  left: 150px;
+  display: none;
+}
+
+.goblin {
+  font-size: 30px;
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  display: none;
+}
+
+.attack {
+  display: none;
+}
+
+.exit {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+}

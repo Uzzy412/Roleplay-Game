@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Roleplay game</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="game">
+
+      <div class="real-time">
+        <span class="hours"></span><span class="minutes"></span>
+      </div>
+  
+
+
+      <!-- <div class="stats">
+        <span class="xp">XP: <span class="xpCount"></span></span>
+        <span class="health">Health: <span class="healthCount"></span></span>
+        <span class="gold">Gold: <span class="goldCount"></span></span>
+      </div> -->
+      
+      <div class="buttons">
+        <!-- <button type="button" class="inventory">Inventory</button> -->
+        <button type="button" class="enter">Enter the forest</button>
+        <!-- <button type="button" class="exit">Turn around</button> -->
+        <button type="button" class="attack">Attack</button>
+      </div>
+        
+        <div class="text"></div>
+      
+      <div class="map">
+        <!-- <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div> -->
+
+        <!---A grid for styling purposes---> 
+        <table>
+          <tr>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+            <td class="cycle"</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td class="cycle"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </table>
+        <!--------------------------------->
+
+        
+
+        <div class="cave-area">
+          <div class="cave1">🪨</div>
+          <div class="cave2">🪨</div>
+          <div class="cave3">🪨</div>
+          <div class="cave-name">Kronen Stones</div>
+        </div>
+
+        <div class="oak-area">
+          <div class="oak1">🌳</div>
+          <div class="oak2">🌳</div>
+          <div class="oak3">🌳</div>
+          <div class="oak4">🌳</div>
+          <div class="oak5">🌳</div>
+          <div class="oak-name">Oakland Forest</div>
+        </div>
+        
+        <div class="pine-area">
+          <div class="pine1">🌲</div>
+          <div class="pine2">🌲</div>
+          <div class="pine3">🌲</div>
+          <div class="pine4">🌲</div>
+          <div class="pine5">🌲</div>
+          <div class="pine-name">Evergreen Forest</div>
+        </div>
+
+        <div class="mountain-area">
+          <div class="mountain1">🗻</div>
+          <div class="mountain2">🏔️</div>
+          <div class="mountain3">🗻</div>
+          <div class="mountain4">🗻</div>
+          <div class="mountain5">🌲</div>
+          <div class="mountain6">🌲</div>
+          <div class="mountain7">🌲</div>
+          <div class="mountain-name">Gotland Mountain</div>
+        </div>
+
+        <div class="lake-area">
+          <div class="lake1"></div>
+          <div class="lake2"></div>
+          <div class="lake3"></div>
+          <div class="lake4">🌳</div>
+          <div class="lake5">🌳</div>
+          <div class="lake6">🪨</div>
+          <div class="lake-name">Hollung Lake</div>
+        </div>
+
+        <div class="field-area">
+          <div class="field1"></div>
+          <div class="field2">🌿</div>
+          <div class="field3">☘️</div>
+          <div class="field4">🌳</div>
+          <div class="field5">🌿</div>
+          <div class="field-name">Norfolk Fields</div>
+        </div>
+
+        <div class="dragon-castle-area">
+          <div class="castle1">🏰</div>
+          <div class="castle2">🏰</div>
+          <div class="castle3">🏰</div>
+          <div class="castle-name">Dragons Fortress</div>
+        </div>
+
+        <div class="village1-area">
+          <div class="village1-main">🛖</div>
+          <div class="village1-house1">🛖</div>
+          <div class="village1-house2">🛖</div>
+          <div class="village1-house3">🛖</div>
+          <span class="village1-name">Village of Svaland</span>
+        </div>
+
+        <div class="village2-area">
+          <div class="village2-main">🛖</div>
+          <div class="village2-house1">🛖</div>
+          <div class="village2-house2">🛖</div>
+          <div class="village2-house3">🛖</div>
+          <span class="village2-name">Village of Tornstad</span>
+        </div>
+
+        <div class="village3-area">
+          <div class="village3-main">🛖</div>
+          <div class="village3-house1">🛖</div>
+          <div class="village3-house2">🛖</div>
+          <div class="village3-house3">🛖</div>
+          <span class="village3-name">Village of Naesdal</span>
+        </div>
+
+        <div class="town-area">
+          <div class="town-block4">🏩</div>
+          <div class="town-block1">🏫</div>
+          <div class="town-block2">💒</div>
+          <div class="town-block3">🏤</div>
+          <span class="town-name">Town of Lucius</span>
+        </div>
+
+        <div class="goblin">👺</div>
+        <div class="troll">🧌</div>
+        <div class="elf">🧝🏿</div>
+        <div class="orc">👹</div>
+        <div class="exit">EXIT</div>
+
+        <div class="player">🧝</div>
+
+        <div class="overlay"></div>
+      </div> <!--.map ends here-->
+        
+      </div> <!--.game ends here-->
+      
+    <script src="script.js"></script>
+  </body>
+</html>
